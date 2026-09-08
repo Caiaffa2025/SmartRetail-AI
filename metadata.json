@@ -1,0 +1,6 @@
+{
+  "name": "SmartRetail AI",
+  "description": "Plataforma completa de Gestão de Ofertas, Trade Marketing, Encartes Inteligentes e Inteligência de Varejo para redes varejistas.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}

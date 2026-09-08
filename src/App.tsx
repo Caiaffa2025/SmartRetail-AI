@@ -12,10 +12,12 @@ import { FeatureGrid } from './components/FeatureGrid';
 import { TestimonialsSection } from './components/TestimonialsSection';
 import { DemoModal } from './components/DemoModal';
 import { RetailFeedbackWidget } from './components/RetailFeedbackWidget';
+import { AgencyCreditsPopup } from './components/AgencyCreditsPopup';
 import { Footer } from './components/Footer';
 
 export default function App() {
   const [demoModalOpen, setDemoModalOpen] = useState(false);
+  const [creditsModalOpen, setCreditsModalOpen] = useState(false);
   const [activeSection, setActiveSection] = useState('hero');
 
   const handleSelectSection = (sectionId: string) => {
@@ -78,12 +80,20 @@ export default function App() {
       <Footer 
         onOpenDemo={() => setDemoModalOpen(true)}
         onSelectSection={handleSelectSection}
+        onOpenCredits={() => setCreditsModalOpen(true)}
       />
 
       {/* Demo Request Modal */}
       <DemoModal 
         isOpen={demoModalOpen}
         onClose={() => setDemoModalOpen(false)}
+      />
+
+      {/* Agency Credits & Copyright Popup */}
+      <AgencyCreditsPopup 
+        isOpen={creditsModalOpen ? true : undefined}
+        onClose={() => setCreditsModalOpen(false)}
+        autoOpenOnLoad={true}
       />
 
       {/* Floating Retail Intelligence Feedback Widget */}

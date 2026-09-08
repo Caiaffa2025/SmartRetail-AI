@@ -4,9 +4,10 @@ import { ShoppingCart, ShieldCheck, Lock, Mail, Phone, MapPin, ArrowUpRight } fr
 interface FooterProps {
   onOpenDemo: () => void;
   onSelectSection: (sectionId: string) => void;
+  onOpenCredits?: () => void;
 }
 
-export const Footer: React.FC<FooterProps> = ({ onOpenDemo, onSelectSection }) => {
+export const Footer: React.FC<FooterProps> = ({ onOpenDemo, onSelectSection, onOpenCredits }) => {
   return (
     <footer className="bg-slate-950 border-t border-slate-800 text-slate-400 py-16 text-xs">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 space-y-12">
@@ -114,13 +115,24 @@ export const Footer: React.FC<FooterProps> = ({ onOpenDemo, onSelectSection }) =
 
         {/* Bottom Bar */}
         <div className="pt-8 border-t border-slate-800/80 flex flex-col sm:flex-row items-center justify-between gap-4 text-[11px] text-slate-500">
-          <div>
-            © {new Date().getFullYear()} SmartRetail AI. Todos os direitos reservados. Plataforma inspirada em inteligência de varejo e gestão de ofertas.
+          <div className="flex flex-wrap items-center gap-2">
+            <span>© {new Date().getFullYear()} SmartRetail AI. Todos os direitos reservados.</span>
+            {onOpenCredits && (
+              <button
+                onClick={onOpenCredits}
+                className="inline-flex items-center gap-1.5 px-2.5 py-1 rounded-lg bg-emerald-500/10 text-emerald-400 border border-emerald-500/30 hover:bg-emerald-500/20 hover:text-emerald-300 transition-colors font-semibold cursor-pointer"
+              >
+                <span>Stc Mobile / Sydney Caiaffa</span>
+                <ArrowUpRight className="w-3 h-3" />
+              </button>
+            )}
           </div>
           <div className="flex items-center gap-4">
+            <button onClick={onOpenCredits} className="hover:text-emerald-400 transition-colors cursor-pointer text-slate-400 font-medium">
+              Direitos Autorais @2026
+            </button>
             <a href="#privacy" className="hover:underline">Termos de Uso</a>
             <a href="#terms" className="hover:underline">Política de Privacidade</a>
-            <a href="#security" className="hover:underline">Segurança e ERP Sync</a>
           </div>
         </div>
 

@@ -185,6 +185,26 @@ export const HeroSection: React.FC<HeroSectionProps> = ({ onOpenDemo, onExploreM
                   </div>
                 </div>
 
+                {/* Visual Banner Preview */}
+                <div className="relative rounded-2xl overflow-hidden border border-slate-800 shadow-2xl group">
+                  <img 
+                    src="/src/assets/images/smarket_hero_banner_1788880826433.jpg" 
+                    alt="Smarket - Plataforma de Gestão de Ofertas e Trade Marketing" 
+                    className="w-full h-48 sm:h-64 object-cover object-top opacity-90 group-hover:scale-105 transition-transform duration-500"
+                    referrerPolicy="no-referrer"
+                  />
+                  <div className="absolute inset-0 bg-gradient-to-t from-slate-950 via-slate-950/40 to-transparent flex items-end p-4">
+                    <div className="flex items-center justify-between w-full">
+                      <span className="text-xs font-bold text-white bg-slate-950/80 backdrop-blur-md px-3 py-1.5 rounded-lg border border-slate-800">
+                        Painel Smarket • Automação de Ofertas & ERP Sync
+                      </span>
+                      <span className="text-xs font-bold text-emerald-400 bg-emerald-500/10 backdrop-blur-md px-3 py-1.5 rounded-lg border border-emerald-500/30">
+                        Visualização em Tempo Real
+                      </span>
+                    </div>
+                  </div>
+                </div>
+
                 {/* Simulated Offer Item Rows */}
                 <div className="bg-slate-950 p-4 rounded-xl border border-slate-800 space-y-2">
                   <div className="text-xs font-semibold text-slate-400 flex items-center justify-between">

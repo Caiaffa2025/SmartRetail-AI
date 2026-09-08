@@ -75,12 +75,12 @@ export const Header: React.FC<HeaderProps> = ({ onOpenDemo, onSelectSection, act
     onSelectSection(sectionId);
   };
 
-  // Grouped Navigation Data
+  // Grouped Navigation Data (Aligned with Smarket.com.br suite)
   const modulesGroup = [
-    { id: 'tabloid-studio', label: 'Gerador de Encartes', desc: 'Crie tabloides e artes em segundos', icon: FileText, color: 'text-amber-400' },
-    { id: 'trade-hub', label: 'Trade Marketing Hub', desc: 'Contratos e verbas de fornecedores', icon: Target, color: 'text-teal-400' },
-    { id: 'intelligence', label: 'Inteligência de Preços', desc: 'Monitoramento dinâmico de concorrentes', icon: LayoutDashboard, color: 'text-cyan-400' },
-    { id: 'copilot', label: 'AI Copilot Autônomo', desc: 'Assistente inteligente de decisões', icon: Bot, color: 'text-emerald-400' },
+    { id: 'tabloid-studio', label: 'Smarket Encartes & Cartazes', desc: 'Diagramação automática e impressão no PDV', icon: FileText, color: 'text-amber-400' },
+    { id: 'trade-hub', label: 'Smarket Trade Marketing', desc: 'Gestão de JBP, pontos extras e App de Loja', icon: Target, color: 'text-teal-400' },
+    { id: 'intelligence', label: 'Smarket Preços & Rebaixas', desc: 'Metas de margem, ofertas e alertas de validade', icon: LayoutDashboard, color: 'text-cyan-400' },
+    { id: 'copilot', label: 'Smarket Copilot AI', desc: 'Assistente inteligente de decisões varejistas', icon: Bot, color: 'text-emerald-400' },
   ];
 
   const analyticsGroup = [

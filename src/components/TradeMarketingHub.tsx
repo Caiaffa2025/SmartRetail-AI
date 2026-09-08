@@ -99,82 +99,124 @@ export const TradeMarketingHub: React.FC = () => {
         {/* Main Interactive Table & New Agreement Form */}
         <div className="mt-10 grid grid-cols-1 lg:grid-cols-12 gap-8 items-start">
           
-          {/* New Agreement Form (4 cols) */}
-          <div className="lg:col-span-4 bg-slate-900/90 p-6 rounded-2xl border border-slate-800 space-y-4">
-            <h3 className="text-base font-bold text-white flex items-center gap-2">
-              <Plus className="w-4 h-4 text-teal-400" />
-              <span>Propor Novo Acordo Comercial</span>
-            </h3>
-            
-            <form onSubmit={handleAddAgreement} className="space-y-3">
-              <div>
-                <label className="text-xs font-semibold text-slate-400 block mb-1">Indústria / Fornecedor</label>
-                <input
-                  type="text"
-                  placeholder="Ex: Coca-Cola Brasil"
-                  value={newSupplier}
-                  onChange={e => setNewSupplier(e.target.value)}
-                  className="w-full px-3 py-2 bg-slate-950 border border-slate-800 rounded-xl text-xs text-white placeholder-slate-500 focus:outline-none focus:border-teal-500"
-                  required
-                />
+          {/* Trade App Control Showcase Card with Photo Audit (4 cols) */}
+          <div className="lg:col-span-4 bg-slate-900/90 border border-slate-800 rounded-2xl p-6 space-y-5">
+            <div className="space-y-2">
+              <div className="flex items-center gap-2">
+                <span className="p-1.5 rounded-lg bg-teal-500/10 text-teal-400 border border-teal-500/20">
+                  <Camera className="w-4 h-4" />
+                </span>
+                <span className="text-xs font-bold uppercase tracking-wider text-teal-400">
+                  Smarket Trade App Control
+                </span>
               </div>
+              <h3 className="text-lg font-bold text-white font-outfit">
+                Comprovação Fotográfica no PDV
+              </h3>
+              <p className="text-xs text-slate-400 leading-relaxed">
+                A equipe de campo utiliza o aplicativo mobile para fotografar ilhas e pontas de gôndola. As fotos possuem validação por geolocalização e data/hora para faturamento direto do fornecedor.
+              </p>
+            </div>
 
-              <div>
-                <label className="text-xs font-semibold text-slate-400 block mb-1">Nome da Campanha</label>
-                <input
-                  type="text"
-                  placeholder="Ex: Festival Verão Refrescante"
-                  value={newCampaign}
-                  onChange={e => setNewCampaign(e.target.value)}
-                  className="w-full px-3 py-2 bg-slate-950 border border-slate-800 rounded-xl text-xs text-white placeholder-slate-500 focus:outline-none focus:border-teal-500"
-                  required
-                />
+            {/* Mobile App Screen Mockup */}
+            <div className="relative rounded-2xl overflow-hidden border border-slate-800 shadow-xl group">
+              <img 
+                src="/src/assets/images/smarket_mobile_audit_1788880848707.jpg" 
+                alt="Smarket Trade App Control - Comprovação de Loja e Ponto Extra" 
+                className="w-full h-60 object-cover object-center group-hover:scale-105 transition-transform duration-500"
+                referrerPolicy="no-referrer"
+              />
+              <div className="absolute inset-0 bg-gradient-to-t from-slate-950 via-slate-950/20 to-transparent flex items-end p-3">
+                <div className="flex items-center justify-between w-full text-[11px] font-bold text-white bg-slate-950/90 backdrop-blur-md px-3 py-1.5 rounded-lg border border-slate-800">
+                  <span className="flex items-center gap-1 text-emerald-400">
+                    <CheckCircle2 className="w-3.5 h-3.5" />
+                    Auditoria Aprovada
+                  </span>
+                  <span className="text-slate-400 font-mono">GPS: PDV Loja #102</span>
+                </div>
               </div>
+            </div>
 
-              <div>
-                <label className="text-xs font-semibold text-slate-400 block mb-1">Ativo de Mídia Solicitado</label>
-                <select
-                  value={newMediaType}
-                  onChange={e => setNewMediaType(e.target.value as any)}
-                  className="w-full px-3 py-2 bg-slate-950 border border-slate-800 rounded-xl text-xs text-white focus:outline-none focus:border-teal-500"
+            <div className="pt-2">
+              <form onSubmit={handleAddAgreement} className="space-y-3 bg-slate-950 p-4 rounded-xl border border-slate-800">
+                <h4 className="text-xs font-bold text-white flex items-center gap-1.5">
+                  <Plus className="w-3.5 h-3.5 text-teal-400" />
+                  <span>Cadastrar Novo Acordo de Trade</span>
+                </h4>
+
+                <div>
+                  <label className="block text-[11px] text-slate-400 mb-1">Fornecedor / Marca</label>
+                  <input
+                    type="text"
+                    value={newSupplier}
+                    onChange={(e) => setNewSupplier(e.target.value)}
+                    placeholder="Ex: Coca-Cola / Solar"
+                    className="w-full px-3 py-1.5 rounded-lg bg-slate-900 border border-slate-800 text-xs text-white placeholder-slate-500 focus:outline-none focus:border-teal-500"
+                    required
+                  />
+                </div>
+
+                <div>
+                  <label className="block text-[11px] text-slate-400 mb-1">Nome da Campanha</label>
+                  <input
+                    type="text"
+                    value={newCampaign}
+                    onChange={(e) => setNewCampaign(e.target.value)}
+                    placeholder="Ex: Verão Refrescante 2026"
+                    className="w-full px-3 py-1.5 rounded-lg bg-slate-900 border border-slate-800 text-xs text-white placeholder-slate-500 focus:outline-none focus:border-teal-500"
+                    required
+                  />
+                </div>
+
+                <div className="grid grid-cols-2 gap-2">
+                  <div>
+                    <label className="block text-[11px] text-slate-400 mb-1">Tipo de Mídia</label>
+                    <select
+                      value={newMediaType}
+                      onChange={(e) => setNewMediaType(e.target.value as any)}
+                      className="w-full px-2 py-1.5 rounded-lg bg-slate-900 border border-slate-800 text-[11px] text-white focus:outline-none focus:border-teal-500"
+                    >
+                      <option value="Encarte Capa">Encarte Capa</option>
+                      <option value="Ponta de Ilha">Ponta de Ilha</option>
+                      <option value="Banner E-commerce">Banner Digital</option>
+                      <option value="WhatsApp Mídias">WhatsApp Disparo</option>
+                    </select>
+                  </div>
+                  <div>
+                    <label className="block text-[11px] text-slate-400 mb-1">Aporte (R$)</label>
+                    <input
+                      type="number"
+                      value={newInvestment}
+                      onChange={(e) => setNewInvestment(e.target.value)}
+                      className="w-full px-2 py-1.5 rounded-lg bg-slate-900 border border-slate-800 text-xs text-emerald-400 font-bold focus:outline-none focus:border-teal-500"
+                    />
+                  </div>
+                </div>
+
+                <button
+                  type="submit"
+                  className="w-full py-2 rounded-lg bg-teal-500 text-slate-950 font-bold text-xs hover:bg-teal-400 transition-colors cursor-pointer"
                 >
-                  <option value="Encarte Capa">Encarte Capa (Destaque Principal)</option>
-                  <option value="Ponta de Ilha">Ponta de Ilha / Exposição Física</option>
-                  <option value="Banner E-commerce">Banner E-commerce & App</option>
-                  <option value="WhatsApp Mídias">WhatsApp & Redes Sociais</option>
-                </select>
-              </div>
-
-              <div>
-                <label className="text-xs font-semibold text-slate-400 block mb-1">Valor do Aporte de Trade (R$)</label>
-                <input
-                  type="number"
-                  value={newInvestment}
-                  onChange={e => setNewInvestment(e.target.value)}
-                  className="w-full px-3 py-2 bg-slate-950 border border-slate-800 rounded-xl text-xs text-emerald-400 font-bold focus:outline-none focus:border-teal-500"
-                />
-              </div>
-
-              <button
-                type="submit"
-                className="w-full py-2.5 bg-teal-500 hover:bg-teal-400 text-slate-950 text-xs font-bold rounded-xl transition-all cursor-pointer"
-              >
-                Registrar Proposta de Trade
-              </button>
-            </form>
+                  Registrar Acordo de Trade
+                </button>
+              </form>
+            </div>
           </div>
 
-          {/* Agreements Table (8 cols) */}
-          <div className="lg:col-span-8 bg-slate-900/90 rounded-2xl border border-slate-800 p-6 space-y-4">
-            
-            <div className="flex flex-wrap items-center justify-between gap-4">
-              <h3 className="text-base font-bold text-white flex items-center gap-2">
-                <FileText className="w-4 h-4 text-teal-400" />
-                <span>Contratos de Trade Marketing Ativos</span>
-              </h3>
+          {/* Trade Agreements Table (8 cols) */}
+          <div className="lg:col-span-8 bg-slate-900/90 p-6 rounded-2xl border border-slate-800 space-y-4">
+            <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-3 border-b border-slate-800 pb-4">
+              <div>
+                <h3 className="text-lg font-bold text-white font-outfit">
+                  Acordos de Cooperação com Fornecedores
+                </h3>
+                <p className="text-xs text-slate-400">
+                  Acompanhamento de status, execução em PDV e aportes financeiros
+                </p>
+              </div>
 
-              {/* Status Filter */}
-              <div className="flex items-center gap-1 bg-slate-950 p-1 rounded-xl border border-slate-800">
+              {/* Status Filter Buttons */}
+              <div className="flex items-center gap-1.5 bg-slate-950 p-1 rounded-xl border border-slate-800">
                 <button
                   onClick={() => setFilterStatus('todos')}
                   className={`px-3 py-1 rounded-lg text-xs font-bold transition-all ${

@@ -45,7 +45,7 @@ export const AiCopilotModule: React.FC = () => {
   };
 
   return (
-    <section id="copilot" className="py-20 bg-slate-950 border-t border-slate-800/60 relative overflow-hidden">
+    <section id="copilot" className="py-20 bg-slate-950 border-t border-slate-800/60 relative overflow-hidden scroll-mt-24">
       
       {/* Glow Effects */}
       <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[500px] h-[500px] bg-emerald-500/10 rounded-full blur-[140px] pointer-events-none" />

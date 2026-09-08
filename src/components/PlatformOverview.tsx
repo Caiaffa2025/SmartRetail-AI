@@ -142,7 +142,7 @@ export const PlatformOverview: React.FC<PlatformOverviewProps> = ({ onOpenDemo, 
   ];
 
   return (
-    <section id="platform-overview" className="py-20 bg-slate-950 border-t border-slate-800/80 relative overflow-hidden">
+    <section id="platform-overview" className="py-20 bg-slate-950 border-t border-slate-800/80 relative overflow-hidden scroll-mt-24">
       
       {/* Background Decorative Lighting */}
       <div className="absolute top-1/3 left-1/4 w-96 h-96 bg-emerald-500/10 rounded-full blur-[140px] pointer-events-none" />

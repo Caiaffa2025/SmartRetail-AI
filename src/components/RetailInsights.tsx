@@ -78,7 +78,7 @@ export const RetailInsights: React.FC = () => {
   };
 
   return (
-    <section id="retail-insights" className="py-20 bg-slate-950 border-t border-slate-800 relative overflow-hidden">
+    <section id="retail-insights" className="py-20 bg-slate-950 border-t border-slate-800 relative overflow-hidden scroll-mt-24">
       {/* Background Decorative Gradients */}
       <div className="absolute top-0 right-1/4 w-96 h-96 bg-emerald-500/10 rounded-full blur-3xl pointer-events-none" />
       <div className="absolute bottom-0 left-1/4 w-96 h-96 bg-teal-500/10 rounded-full blur-3xl pointer-events-none" />

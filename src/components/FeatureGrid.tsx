@@ -46,7 +46,7 @@ export const FeatureGrid: React.FC<FeatureGridProps> = ({ onOpenDemo }) => {
   ];
 
   return (
-    <section className="py-20 bg-slate-950 border-t border-slate-800/60 relative">
+    <section id="features" className="py-20 bg-slate-950 border-t border-slate-800/60 relative scroll-mt-24">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         
         {/* Section Header */}

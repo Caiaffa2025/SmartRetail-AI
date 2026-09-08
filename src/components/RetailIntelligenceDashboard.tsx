@@ -569,7 +569,7 @@ export const RetailIntelligenceDashboard: React.FC = () => {
   const filteredAlerts = alerts.filter(a => statusFilter === 'all' || a.status === statusFilter);
 
   return (
-    <section id="intelligence" className="py-20 bg-slate-950 border-t border-slate-800/60 relative">
+    <section id="intelligence" className="py-20 bg-slate-950 border-t border-slate-800/60 relative scroll-mt-24">
       
       {/* Toast Notification */}
       {toastMessage && (

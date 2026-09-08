@@ -16,7 +16,7 @@ export const RoiCalculator: React.FC<RoiCalculatorProps> = ({ onOpenDemo }) => {
   const extraTradeVerbaGained = Math.round(storeCount * 24000);
 
   return (
-    <section id="roi-calculator" className="py-20 bg-slate-950 border-t border-slate-800/60 relative">
+    <section id="roi-calculator" className="py-20 bg-slate-950 border-t border-slate-800/60 relative scroll-mt-24">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         
         {/* Section Header */}
